@@ -32,9 +32,14 @@ form.addEventListener('input', updateFormState);
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
-  // Output the form data to the console
-  console.log('Email:', emailInput.value);
-  console.log('Message:', messageInput.value);
+  // Create an object with form data
+  const formData = {
+    email: emailInput.value,
+    message: messageInput.value,
+  };
+
+  // Output the form data object to the console
+  console.log(formData);
 
   // Cleaning the local storage
   localStorage.removeItem('feedback-form-state');
@@ -43,3 +48,6 @@ form.addEventListener('submit', function (e) {
   emailInput.value = '';
   messageInput.value = '';
 });
+
+
+// test@test.com
